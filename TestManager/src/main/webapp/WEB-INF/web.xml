@@ -19,7 +19,7 @@
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
-			<param-value>com.cts.rest.service</param-value>
+			<param-value>com.nab.rest.service</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
