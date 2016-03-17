@@ -4,5 +4,4 @@ public enum ComplexityLevel {
 	EASY,
 	MEDIUM,
 	HARD
-
 }

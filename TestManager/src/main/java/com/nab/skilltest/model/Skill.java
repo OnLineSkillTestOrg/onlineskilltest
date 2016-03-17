@@ -8,7 +8,4 @@ public enum Skill {
 	REST_SERVICE,
 	DESIGN_PATTERN,
 	JSF;
-	
-	
-
 }
