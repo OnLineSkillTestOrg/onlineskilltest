@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.js"></script>
+	 
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+ 
+         <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <!-- Light package of effect.css It is optional -->
+        <link rel="stylesheet" href="../css/effect-light.min.css">
+        <!-- Latest compiled and minified CSS on head of your page -->
+        <link rel="stylesheet" href="../css/quantumui.min.css">
+          
+		  <script src="../js/controller/mycon.js"></script>
+		 <!-- Angular --> 
+		<script src="../js/library/angular.min.js"></script>
+        <script src="../js/library/angular-animate.min.js"></script>
+        <script src="../js/library/angular-sanitize.min.js"></script>
+        <!-- QuantumUI -->
+        <script src="../js/library/quantumui-all.min.js"></script>
+ 		<script src="../js/library/moment.min.js"></script>
+      
+</head>
+
+<body ng-app="myapp">
+  <div ng-controller="HelloController" >
+	
+	
+      <h2>Hello {{helloTo.title}} !</h2>
+		 <span ng-show="helloTo.showIt"><h2>Mandal</h2></span>
+      <span ng-hide="helloTo.showIt"><h2>Nabin</h2></span>
+	  <div ng-switch on="myData.switch">
+	  <div ng-switch-when="1">Shown when switch is 1</div>
+        <div ng-switch-when="2">Shown when switch is 2</div>
+        <div ng-switch-default>Shown when switch is anything else than 1 and 2</div>
+		</div>
+		
+		<div ng-if="myData.showIt">ng-if Show it</div>
+		
+		<ol>
+   <li ng-repeat="theItem in myData.items | filter:itemFilter">{{theItem.text}}</li>
+   
+   
+   <div ng-include="'simpleFileUploader.html'"></div>
+   
+   <div ng-click="myData.doClick($event)">Click here</div>
+</ol>
+   <input type="radio" ng-model="myData.whichNewsletter" value="weeklyNews">    
+<input type="radio" ng-model="myData.whichNewsletter" value="monthlyNews">    
+	{{myData.whichNewsletter}}
+</div>
+<div class="btn-group">
+        <label class="btn btn-primary" ng-model="checkModel.left" uib-btn-checkbox>Left</label>
+        <label class="btn btn-primary" ng-model="checkModel.middle" uib-btn-checkbox>Middle</label>
+        <label class="btn btn-primary" ng-model="checkModel.right" uib-btn-checkbox>Right</label>
+    </div>
+	
+	<div>
+<button type="button" data-nq-dropdown="" class="btn btn-inverse">Open Menu</button>
+    <ul class="dropdown-menu" tabindex="-1" role="menu">
+      <li tabindex="-1" role="presentation"><a href="#" role="menuitem"><i class="fa fa-bluetooth"></i> Action</a></li>
+      <li tabindex="-1" role="presentation"><a href="#" role="menuitem"><i class="fa fa-eye"></i> Action 2</a></li>
+      <li tabindex="-1" role="presentation"><a href="#" role="menuitem"><i class="fa fa-cog"></i> Action 3</a></li>
+    </ul>
+
+
+	</div>
+	
+	
+  </div>
+
+
+    
+
+</body>
+</html>

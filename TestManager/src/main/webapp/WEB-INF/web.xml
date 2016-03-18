@@ -9,6 +9,7 @@
 		<param-value>classpath:applicationcontext.xml</param-value>
 	</context-param>
 
+
 	<listener>
 		<listener-class>
 			org.springframework.web.context.ContextLoaderListener
@@ -38,7 +39,7 @@
 
 	<servlet-mapping>
 		<servlet-name>spring-web</servlet-name>
-		<url-pattern>/</url-pattern>
+		<url-pattern>/springrest/*</url-pattern>
 	</servlet-mapping>
   
 </web-app>

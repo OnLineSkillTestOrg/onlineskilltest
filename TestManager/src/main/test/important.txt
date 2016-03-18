@@ -1,0 +1,2 @@
+Error :The ResourceConfig instance does not contain any root resource classes 
+Sol: Maven clean build then refresh project then publish then start tomcat
