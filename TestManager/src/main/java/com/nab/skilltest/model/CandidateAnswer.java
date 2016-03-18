@@ -4,15 +4,16 @@ import java.util.List;
 
 public class CandidateAnswer {
 	
-	Question question;
+	int  questionID;
 	List<ChoiceAnswer> selectedAnswers;
 	String freeTextAnswer;
 	boolean isCorrect;
-	public Question getQuestion() {
-		return question;
+	
+	public int getQuestionID() {
+		return questionID;
 	}
-	public void setQuestion(Question question) {
-		this.question = question;
+	public void setQuestionID(int questionID) {
+		this.questionID = questionID;
 	}
 	public List<ChoiceAnswer> getSelectedAnswers() {
 		return selectedAnswers;

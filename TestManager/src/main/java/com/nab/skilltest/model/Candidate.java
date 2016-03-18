@@ -6,6 +6,20 @@ public class Candidate {
 	
 	long id;
 	String name;
+	String email;
+	String mobileNo;
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getMobileNo() {
+		return mobileNo;
+	}
+	public void setMobileNo(String mobileNo) {
+		this.mobileNo = mobileNo;
+	}
 	//TODO other details
 	List<Exam> exams;
 	public long getId() {

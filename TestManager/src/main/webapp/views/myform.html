@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.5/angular.min.js"></script>
+</head>
+
+<body ng-app="myapp">
+
+<div ng-controller="MyController" >
+  <form>
+    Name : <input type="text" id="name" ng-model="myForm.name" ng-minlength="5" ng-maxlength="12">  <br/>
+	 
+	Address : <input type="text" id="address" ng-model="myForm.address" ng-minlength="10" ng-maxlength="50">  <br/>
+	 
+    
+    <button ng-click="myForm.submitTheForm()">Submit Form</button>
+  </form>
+
+  <div>
+    {{myForm.name}}
+  </div>
+  <div>
+   User saved : {{myForm.user.name}}<br> <br>
+   User ID is: {{myForm.user.id}}
+  </div>
+</div>
+
+<script>
+  angular.module("myapp", [])
+     .controller("MyController", function($scope, $http) {
+       $scope.myForm = {};
+       $scope.myForm.name = "Nabin Mandal"; 
+       $scope.myForm.address  = "B-205 Silver Estate";
+
+     $scope.myForm.submitTheForm = function(item, event) {
+       console.log("--> Submitting form");
+        var dataObject = {"name":$scope.myForm.name,"address":$scope.myForm.address};
+	//	 var dataObject = {"name":"Nabi","address":"B 206"};
+     var responsePromise = $http.put("http://localhost:8080/TestManager/rest/simpleservice/user/",dataObject,{});
+	   responsePromise.success(function(data) {
+	   	   alert("success!");
+	   	    $scope.myForm.user=data;
+       		 
+       });
+        responsePromise.error(function(data, status, headers, config) {
+          alert("Submitting form failed!");
+       });
+     }
+
+  });
+</script>
+
+</body>
+</html>

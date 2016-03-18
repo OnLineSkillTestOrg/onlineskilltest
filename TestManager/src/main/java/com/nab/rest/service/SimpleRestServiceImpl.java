@@ -34,16 +34,13 @@ public class SimpleRestServiceImpl implements SimpleRestService {
 	}
 	
 	public User createUser(User usr) {
-		//Dummy service only for understanding only 
-		if(usr.getId()==0){
-			usr.setId(1234);
-		}
+		
 		ApplicationContext ctx = new GenericXmlApplicationContext("applicationcontext.xml");
 		SimpleMongoDaoImpl mydao = (SimpleMongoDaoImpl)ctx.getBean("myMongoDAO");	
 		mydao.saveUser(usr);
 		User s=mydao.getUser(usr.getId());
 		System.out.println(" hiya : nabin: mongo "+mydao);
-		return usr;
+		return s;
 	}
 
 	public String welcome(String name) {

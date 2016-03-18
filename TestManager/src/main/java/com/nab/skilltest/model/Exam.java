@@ -7,6 +7,16 @@ public class Exam {
 	
 	long id;
 	Date dateTime;
+	Date startTime;
+	Date endTime;
+	//TODO more details
+	
+	List<CandidateAnswer> myAnswers;
+	int score;
+	String evaluatorRemarks;
+	boolean manualEvaluationComplete;
+	
+	ExamTemplate template;
 	public long getId() {
 		return id;
 	}
@@ -79,15 +89,6 @@ public class Exam {
 		this.template = template;
 	}
 
-	Date startTime;
-	Date endTime;
-	//TODO more details
-	
-	List<CandidateAnswer> myAnswers;
-	int score;
-	String evaluatorRemarks;
-	boolean manualEvaluationComplete;
-	
-	ExamTemplate template;
+
 
 }

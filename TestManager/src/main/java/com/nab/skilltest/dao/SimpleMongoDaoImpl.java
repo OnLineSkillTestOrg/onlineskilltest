@@ -1,5 +1,7 @@
 package com.nab.skilltest.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -32,6 +34,8 @@ public class SimpleMongoDaoImpl implements SimpleMongoDao {
 	
 	public User saveUser(User user) {
 		
+		List<User> list =mongoOperation.findAll(User.class);
+		user.setId(list.size()+1);
 		mongoOperation.save(user);
 		System.out.println("Saved user : "+user.getName());
 		return user;

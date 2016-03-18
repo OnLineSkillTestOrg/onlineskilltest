@@ -4,15 +4,15 @@ import java.util.List;
 
 public class ExamTemplate {
 	
-	String jd;
+	String id;
 	String candidateInstructions;
 	List<QuestionTemplate> questionsTypes;
 	int duration;
 	public String getJd() {
-		return jd;
+		return id;
 	}
 	public void setJd(String jd) {
-		this.jd = jd;
+		this.id = jd;
 	}
 	public String getCandidateInstructions() {
 		return candidateInstructions;
