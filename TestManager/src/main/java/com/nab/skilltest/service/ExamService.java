@@ -11,6 +11,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.nab.skilltest.model.User;
+import com.nab.skilltest.model.json.AnswerResponse;
+import com.nab.skilltest.model.json.Question;
 
 
 @Service
@@ -21,6 +23,12 @@ public interface ExamService {
 	@Path("/exam")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	ResponseEntity<User> createExam(@PathParam("templateId") String templateId);
+	ResponseEntity<Question> createExam(@PathParam("templateId") String templateId);
+	
+	@POST
+	@Path("/answer")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	ResponseEntity<Question> submitAnswer(AnswerResponse answer);
 
 }
