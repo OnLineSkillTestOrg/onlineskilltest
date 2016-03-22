@@ -23,12 +23,21 @@ public interface ExamService {
 	@Path("/exam")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	ResponseEntity<Question> createExam(@PathParam("templateId") String templateId);
+	public ResponseEntity<Question> createExam(@PathParam("templateId") String templateId);
+	
+//	/exam?templateId=1
 	
 	@POST
 	@Path("/answer")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
-	ResponseEntity<Question> submitAnswer(AnswerResponse answer);
+	public ResponseEntity<Question> submitAnswer(AnswerResponse answer);
+	// /answer
+	
+	@POST
+	@Path("/finish")
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes(MediaType.APPLICATION_JSON)
+	public String finish(AnswerResponse answer);
 
 }
