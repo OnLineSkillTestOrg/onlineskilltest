@@ -3,6 +3,7 @@
 	<name>TestManager</name>
 	<comment></comment>
 	<projects>
+		<project>TestManager</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
