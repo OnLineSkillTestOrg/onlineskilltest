@@ -6,8 +6,8 @@ public class Question {
 	
 	int id;
 	String description;
-	List<ChoiceAnswer> answerOptions;
-	List<ChoiceAnswer> correctAnswers;
+	List<String> answerOptions;
+	List<String> correctAnswers;
 	QuestionType qType;
 	ComplexityLevel cLevel;
 	Skill skill;
