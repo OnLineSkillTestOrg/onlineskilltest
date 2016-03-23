@@ -6,8 +6,8 @@ public class Question {
 	
 	int id;
 	String description;
-	List<ChoiceAnswer> answerOptions;
-	List<ChoiceAnswer> correctAnswers;
+	List<String> answerOptions;
+	List<String> correctAnswers;
 	QuestionType qType;
 	ComplexityLevel cLevel;
 	Skill skill;
@@ -25,20 +25,20 @@ public class Question {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public List<ChoiceAnswer> getAnswerOptions() {
-		return answerOptions;
-	}
-	public void setAnswerOptions(List<ChoiceAnswer> answerOptions) {
-		this.answerOptions = answerOptions;
-	}
-	public List<ChoiceAnswer> getCorrectAnswers() {
-		return correctAnswers;
-	}
-	public void setCorrectAnswers(List<ChoiceAnswer> correctAnswers) {
-		this.correctAnswers = correctAnswers;
-	}
 	public QuestionType getqType() {
 		return qType;
+	}
+	public List<String> getAnswerOptions() {
+		return answerOptions;
+	}
+	public void setAnswerOptions(List<String> answerOptions) {
+		this.answerOptions = answerOptions;
+	}
+	public List<String> getCorrectAnswers() {
+		return correctAnswers;
+	}
+	public void setCorrectAnswers(List<String> correctAnswers) {
+		this.correctAnswers = correctAnswers;
 	}
 	public void setqType(QuestionType qType) {
 		this.qType = qType;
