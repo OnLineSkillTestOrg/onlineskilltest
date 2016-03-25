@@ -10,6 +10,7 @@
  	<aop:aspectj-autoproxy proxy-target-class="true" />
 	<context:component-scan base-package="com.nab.rest.service"/>
 	<context:component-scan base-package="com.nab.skilltest.service"/>
+	<context:component-scan base-package="com.nab.skilltest.helper"></context:component-scan>
 	<context:component-scan base-package="com.nab.exception"></context:component-scan>
 	<context:component-scan base-package="com.nab.aspects"></context:component-scan>
 	 <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate"> 

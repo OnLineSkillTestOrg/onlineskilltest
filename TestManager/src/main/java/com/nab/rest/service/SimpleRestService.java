@@ -13,6 +13,7 @@ import com.nab.skilltest.model.User;
 
 public interface SimpleRestService {
 	
+
 	
 	@PUT
 	@Path("/user")

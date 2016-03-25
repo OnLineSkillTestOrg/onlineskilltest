@@ -20,8 +20,6 @@ public class Candidate {
 	public void setMobileNo(String mobileNo) {
 		this.mobileNo = mobileNo;
 	}
-	//TODO other details
-	List<Exam> exams;
 	public long getId() {
 		return id;
 	}
@@ -34,12 +32,7 @@ public class Candidate {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<Exam> getExams() {
-		return exams;
-	}
-	public void setExams(List<Exam> exams) {
-		this.exams = exams;
-	}
+	
 	
 
 }

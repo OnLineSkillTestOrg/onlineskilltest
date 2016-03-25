@@ -5,7 +5,7 @@ import java.util.List;
 public class CandidateAnswer {
 	
 	int  questionID;
-	List<ChoiceAnswer> selectedAnswers;
+	List<String> selectedAnswers;
 	String freeTextAnswer;
 	boolean isCorrect;
 	
@@ -15,10 +15,10 @@ public class CandidateAnswer {
 	public void setQuestionID(int questionID) {
 		this.questionID = questionID;
 	}
-	public List<ChoiceAnswer> getSelectedAnswers() {
+	public List<String> getSelectedAnswers() {
 		return selectedAnswers;
 	}
-	public void setSelectedAnswers(List<ChoiceAnswer> selectedAnswers) {
+	public void setSelectedAnswers(List<String> selectedAnswers) {
 		this.selectedAnswers = selectedAnswers;
 	}
 	public String getFreeTextAnswer() {

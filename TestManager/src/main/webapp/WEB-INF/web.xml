@@ -20,7 +20,7 @@
 		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
 		<init-param>
 			<param-name>com.sun.jersey.config.property.packages</param-name>
-			<param-value>com.nab.rest.service</param-value>
+			<param-value>com.nab.skilltest.service,com.nab.rest.service</param-value>
 		</init-param>
 		<init-param>
          <param-name>com.sun.jersey.config.feature.DisableWADL</param-name>

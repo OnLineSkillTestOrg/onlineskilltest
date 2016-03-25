@@ -3,13 +3,18 @@ package com.nab.skilltest.model;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+@Document
 public class Exam {
 	
-	long id;
+	@Id
+	int id;
 	Date dateTime;
 	Date startTime;
 	Date endTime;
 	//TODO more details
+	Candidate candidate;
 	
 	List<CandidateAnswer> myAnswers;
 	int score;
@@ -17,11 +22,11 @@ public class Exam {
 	boolean manualEvaluationComplete;
 	
 	ExamTemplate template;
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -89,6 +94,12 @@ public class Exam {
 		this.template = template;
 	}
 
+	public Candidate getCandidate() {
+		return candidate;
+	}
 
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
+	}
 
 }
