@@ -132,6 +132,7 @@ public class ExamServiceImpl implements ExamService {
 		ret.setTotalCount(listQuestions.size());
 		ret.setAnswerCount(0);
 		ret.setExamID(ex.getId());
+		ret.setQuestionSequenceNumber(0);
 		return ret;
 	}
 
@@ -146,6 +147,8 @@ public class ExamServiceImpl implements ExamService {
 		ret.setTotalCount(exam.getMyAnswers().size());
 		ret.setAnswerCount(examHelper.getAnswerCount(exam.getMyAnswers()));
 		ret.setExamID(answer.getExamID());
+		ret.setSelectedAnswers(examHelper.getSelectedAnswer(exam,ret.getQuestionId()));
+		ret.setQuestionSequenceNumber(examHelper.getSequenceNumber(exam,ret.getQuestionId()));
 		return ret;
 	}
 

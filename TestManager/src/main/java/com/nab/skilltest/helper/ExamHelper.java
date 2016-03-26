@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
 import com.nab.skilltest.dao.QuestionDAO;
 import com.nab.skilltest.model.CandidateAnswer;
 import com.nab.skilltest.model.Exam;
@@ -50,7 +51,7 @@ public class ExamHelper {
 		
 		com.nab.skilltest.ui.model.Question  uiquestion = new com.nab.skilltest.ui.model.Question();
 		uiquestion.setQuestionText(question.getDescription());
-		uiquestion.setAnswers(question.getAnswerOptions());
+		uiquestion.setAnswersOptions(question.getAnswerOptions());
 		uiquestion.setQuestionType(question.getqType());
 		uiquestion.setQuestionId(question.getId());
 		return uiquestion;
@@ -97,6 +98,28 @@ public class ExamHelper {
 			}
 		}
 		return count;
+	}
+
+	public List<String> getSelectedAnswer(Exam exam, int questionId) {
+		for(CandidateAnswer canAn: exam.getMyAnswers()){
+			if(canAn.getQuestionID()==questionId){
+				return canAn.getSelectedAnswers();
+			}
+			
+		}
+		return null;
+	}
+
+	public int getSequenceNumber(Exam exam, int questionId) {
+		int sequenceNumber=-1;
+		List<CandidateAnswer> myAnswer=exam.getMyAnswers();
+		for(int i=0;i<myAnswer.size();i++){
+			if(myAnswer.get(i).getQuestionID()==questionId){
+				sequenceNumber=i+1;
+				break;
+			}
+		}
+		return sequenceNumber;
 	}
 	
 }

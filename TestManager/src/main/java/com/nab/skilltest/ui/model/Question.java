@@ -11,11 +11,13 @@ public class Question {
 	int examID;
 	String questionText;
 	int questionId;
-	String questionSequenceNumber;
+	int questionSequenceNumber;
 	QuestionType questionType;
-	List<String> answers;
+	List<String> answersOptions;
+	List<String> selectedAnswers;
 	int previousQuestion;
 	int nextQuestion;
+	
 	
 	public int getTotalCount() {
 		return totalCount;
@@ -41,10 +43,10 @@ public class Question {
 	public void setQuestionId(int questionId) {
 		this.questionId = questionId;
 	}
-	public String getQuestionSequenceNumber() {
+	public int getQuestionSequenceNumber() {
 		return questionSequenceNumber;
 	}
-	public void setQuestionSequenceNumber(String questionSequenceNumber) {
+	public void setQuestionSequenceNumber(int questionSequenceNumber) {
 		this.questionSequenceNumber = questionSequenceNumber;
 	}
 	public QuestionType getQuestionType() {
@@ -53,12 +55,7 @@ public class Question {
 	public void setQuestionType(QuestionType questionType) {
 		this.questionType = questionType;
 	}
-	public List<String> getAnswers() {
-		return answers;
-	}
-	public void setAnswers(List<String> answers) {
-		this.answers = answers;
-	}
+	
 	public int getPreviousQuestion() {
 		return previousQuestion;
 	}
@@ -76,6 +73,18 @@ public class Question {
 	}
 	public void setExamID(int examID) {
 		this.examID = examID;
+	}
+	public List<String> getSelectedAnswers() {
+		return selectedAnswers;
+	}
+	public void setSelectedAnswers(List<String> selectedAnswers) {
+		this.selectedAnswers = selectedAnswers;
+	}
+	public List<String> getAnswersOptions() {
+		return answersOptions;
+	}
+	public void setAnswersOptions(List<String> answersOptions) {
+		this.answersOptions = answersOptions;
 	}
 
 }
