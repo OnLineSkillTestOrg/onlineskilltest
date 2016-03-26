@@ -1,0 +1,46 @@
+/exam?templateId=1
+
+Question
+	questionText: What is the superclass of all object in java
+	questionId: 1
+	questionType:singleChoice
+	List<AnswerOptions>[
+		{
+			answerText: super
+			selected:null
+		}
+		{
+			answerText: Object
+			selected:true
+		}
+		{
+			answerText: Class
+			selected:null
+		}
+		]
+	previousQuestion:null
+	nextQuestion: 2
+	
+
+
+================================================================================================	
+	
+POST /navigate 
+
+BODY	
+AnswerResponse
+	questionId:1
+	List<AnswerOptions>[
+		{
+			answerText: Class
+			
+		}
+	nextQuestion:1
+	
+================================================================================================		
+/finish
+
+
+1 2 ->3 ->4->5an
+	
+	
