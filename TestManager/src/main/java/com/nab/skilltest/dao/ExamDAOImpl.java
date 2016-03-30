@@ -1,6 +1,7 @@
 package com.nab.skilltest.dao;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,7 @@ public class ExamDAOImpl implements ExamDAO {
 		
 		Query searchUserQuery = new Query(Criteria.where("id").is(examID));
 		Exam exam =mongoOperation.findOne(searchUserQuery, Exam.class);
-		
+		Collections.sort(exam.getMyAnswers());
 		return exam;
 	}
 	

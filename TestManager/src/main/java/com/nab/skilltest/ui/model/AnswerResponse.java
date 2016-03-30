@@ -6,7 +6,7 @@ public class AnswerResponse {
 	
 	int questionId;
 	int examID;
-	
+	 boolean isNext =true;
 	List<String> selectedAnswers;
 	int nextQuestion;
 	public int getQuestionId() {
@@ -32,5 +32,11 @@ public class AnswerResponse {
 	}
 	public void setExamID(int examID) {
 		this.examID = examID;
+	}
+	public boolean isNext() {
+		return isNext;
+	}
+	public void setNext(boolean isNext) {
+		this.isNext = isNext;
 	}
 }

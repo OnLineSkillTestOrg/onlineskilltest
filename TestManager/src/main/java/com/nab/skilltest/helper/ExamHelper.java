@@ -1,6 +1,7 @@
 package com.nab.skilltest.helper;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,10 +51,12 @@ public class ExamHelper {
 	public com.nab.skilltest.ui.model.Question transform(Question question){
 		
 		com.nab.skilltest.ui.model.Question  uiquestion = new com.nab.skilltest.ui.model.Question();
-		uiquestion.setQuestionText(question.getDescription());
-		uiquestion.setAnswersOptions(question.getAnswerOptions());
-		uiquestion.setQuestionType(question.getqType());
-		uiquestion.setQuestionId(question.getId());
+		if(question!=null){
+			uiquestion.setQuestionText(question.getDescription());
+			uiquestion.setAnswersOptions(question.getAnswerOptions());
+			uiquestion.setQuestionType(question.getqType());
+			uiquestion.setQuestionId(question.getId());
+		}
 		return uiquestion;
 	}
 
@@ -74,12 +77,17 @@ public class ExamHelper {
 		
 	}
 
-	public int getNextQuestion(List<CandidateAnswer> myAnswers, int questionId) {
+	public int getNextQuestion(List<CandidateAnswer> myAnswers, int questionId,boolean isNext) {
 		int nextQuestionID=-1;
+		Collections.sort(myAnswers);
 		for(int i=0;i<myAnswers.size();i++){
 			if(myAnswers.get(i).getQuestionID()==questionId){
-				if((i+1)<myAnswers.size()){
+				if((i+1)<myAnswers.size() && isNext){
 					nextQuestionID= myAnswers.get(i+1).getQuestionID();
+					break;
+				}else if((i-1)>-1 && !isNext){
+					nextQuestionID= myAnswers.get(i-1).getQuestionID();
+					break;
 				}
 			}
 		}
@@ -113,6 +121,7 @@ public class ExamHelper {
 	public int getSequenceNumber(Exam exam, int questionId) {
 		int sequenceNumber=-1;
 		List<CandidateAnswer> myAnswer=exam.getMyAnswers();
+		Collections.sort(myAnswer);
 		for(int i=0;i<myAnswer.size();i++){
 			if(myAnswer.get(i).getQuestionID()==questionId){
 				sequenceNumber=i+1;

@@ -2,7 +2,7 @@ package com.nab.skilltest.model;
 
 import java.util.List;
 
-public class CandidateAnswer {
+public class CandidateAnswer implements Comparable<CandidateAnswer>{
 	
 	int  questionID;
 	List<String> selectedAnswers;
@@ -40,6 +40,12 @@ public class CandidateAnswer {
 		this.freeTextAnswerMarks = freeTextAnswerMarks;
 	}
 	int freeTextAnswerMarks;
+
+	@Override
+	public int compareTo(CandidateAnswer o) {
+		// TODO Auto-generated method stub
+		return (this.questionID-o.getQuestionID());
+	}
 	
 
 }

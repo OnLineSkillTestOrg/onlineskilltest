@@ -2,6 +2,7 @@ package com.nab.skilltest.service;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import javax.ws.rs.Path;
@@ -125,10 +126,12 @@ public class ExamServiceImpl implements ExamService {
 		List<com.nab.skilltest.model.Question> listQuestions =examHelper.retrieveQuestionsBasedOnTemplate(templateId);
 		examHelper.populateExamWithQuestions(ex,listQuestions);
 		examDAO.saveExam(ex);
-		com.nab.skilltest.model.Question q=questionDAO.retrieveQuestion(listQuestions.get(0).getId());
+		List<CandidateAnswer> list =ex.getMyAnswers();
+		Collections.sort(list);
+		com.nab.skilltest.model.Question q=questionDAO.retrieveQuestion(list.get(0).getQuestionID());
 		ret=examHelper.transform(q);
 		ret.setPreviousQuestion(-1);
-		ret.setNextQuestion(listQuestions.get(1).getId());
+		ret.setNextQuestion(list.get(1).getQuestionID());
 		ret.setTotalCount(listQuestions.size());
 		ret.setAnswerCount(0);
 		ret.setExamID(ex.getId());
@@ -141,9 +144,14 @@ public class ExamServiceImpl implements ExamService {
 		Exam exam =examDAO.retrieveExam(answer.getExamID());
 		examDAO.updateExam(exam,answer);
 		Question ret = examHelper.transform(questionDAO.retrieveQuestion(answer.getNextQuestion()));
-		int nextQuestion = examHelper.getNextQuestion(exam.getMyAnswers(),ret.getQuestionId());
-		ret.setPreviousQuestion(answer.getQuestionId());
-		ret.setNextQuestion(nextQuestion);
+		int nextQuestion = examHelper.getNextQuestion(exam.getMyAnswers(),ret.getQuestionId(),answer.isNext());
+		if(answer.isNext()){
+			ret.setPreviousQuestion(answer.getQuestionId());
+			ret.setNextQuestion(nextQuestion);
+		}else{
+			ret.setPreviousQuestion(nextQuestion);
+			ret.setNextQuestion(answer.getQuestionId());
+		}
 		ret.setTotalCount(exam.getMyAnswers().size());
 		ret.setAnswerCount(examHelper.getAnswerCount(exam.getMyAnswers()));
 		ret.setExamID(answer.getExamID());
