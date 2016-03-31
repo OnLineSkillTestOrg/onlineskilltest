@@ -130,5 +130,19 @@ public class ExamHelper {
 		}
 		return sequenceNumber;
 	}
+
+	public boolean hasSomeValue(List<String> selectedAnswers) {
+		if(selectedAnswers==null){
+			return false;
+		}
+		
+		for(String s:selectedAnswers){
+			if(null!=s && s.trim().length()>0){
+				return true;
+			}
+		}
+		
+		return false;
+	}
 	
 }
