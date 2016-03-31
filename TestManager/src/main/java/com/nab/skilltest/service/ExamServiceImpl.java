@@ -135,14 +135,16 @@ public class ExamServiceImpl implements ExamService {
 		ret.setTotalCount(listQuestions.size());
 		ret.setAnswerCount(0);
 		ret.setExamID(ex.getId());
-		ret.setQuestionSequenceNumber(0);
+		ret.setQuestionSequenceNumber(1);
 		return ret;
 	}
 
 	@Override
 	public Question submitAnswer(AnswerResponse answer) {
 		Exam exam =examDAO.retrieveExam(answer.getExamID());
-		examDAO.updateExam(exam,answer);
+		if(examHelper.hasSomeValue(answer.getSelectedAnswers())){
+			examDAO.updateExam(exam,answer);
+		}
 		Question ret = examHelper.transform(questionDAO.retrieveQuestion(answer.getNextQuestion()));
 		int nextQuestion = examHelper.getNextQuestion(exam.getMyAnswers(),ret.getQuestionId(),answer.isNext());
 		if(answer.isNext()){

@@ -33,16 +33,16 @@ public class ExamDAOImpl implements ExamDAO {
 	@Override
 	public Exam retrieveExam(int examID) {
 		
-		Query searchUserQuery = new Query(Criteria.where("id").is(examID));
-		Exam exam =mongoOperation.findOne(searchUserQuery, Exam.class);
+		Query query = new Query(Criteria.where("id").is(examID));
+		Exam exam =mongoOperation.findOne(query, Exam.class);
 		Collections.sort(exam.getMyAnswers());
 		return exam;
 	}
 	
 	@Override
 	public int getTotalExam(){
-		
-		return mongoOperation.findAll(Exam.class).size();
+		Query query = new Query();
+		return (int)mongoOperation.count(query,Exam.class);
 	}
 
 	@Override
