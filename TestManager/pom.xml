@@ -1,24 +1,24 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>TestManager</groupId>
-  <artifactId>TestManager</artifactId>
-  <packaging>war</packaging>
-  <version>0.0.1-SNAPSHOT</version>
-  <name>TestManager Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-  <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.spring.platform</groupId>
-                <artifactId>platform-bom</artifactId>
-                <version>1.0.1.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-   <build>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>TestManager</groupId>
+	<artifactId>TestManager</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>TestManager Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>io.spring.platform</groupId>
+				<artifactId>platform-bom</artifactId>
+				<version>1.0.1.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<build>
 		<plugins>
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
@@ -38,11 +38,11 @@
 			</plugin>
 		</plugins>
 	</build>
-	
 
-	
-  <dependencies>
-      <dependency>
+
+
+	<dependencies>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
 			<!-- <version>${spring.version}</version> -->
@@ -52,7 +52,7 @@
 			<artifactId>jstl</artifactId>
 			<!-- <version>${jstl.version}</version> -->
 		</dependency>
-      			<dependency>
+		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<!-- <version>4.1.1.RELEASE</version> -->
@@ -64,47 +64,47 @@
 			<!-- <version>4.1.1.RELEASE</version> -->
 		</dependency>
 		<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-beans</artifactId>
-		<!-- <version>4.2.5.RELEASE</version> -->
-	</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<!-- <version>4.2.5.RELEASE</version> -->
+		</dependency>
 		<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-core</artifactId>
-    <!-- <version>2.4.1</version> -->
-</dependency>
-<dependency>
-    <groupId>com.fasterxml.jackson.core</groupId>
-    <artifactId>jackson-databind</artifactId>
-    <!-- <version>2.4.1.1</version> -->
-</dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<!-- <version>2.4.1</version> -->
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<!-- <version>2.4.1.1</version> -->
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
-		<!-- 	<version>4.1.1.RELEASE</version> -->
+			<!-- <version>4.1.1.RELEASE</version> -->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<!-- <version>4.1.1.RELEASE</version> -->
 		</dependency>
-      	 <dependency>
-     	 <groupId>junit</groupId>
-     	 <artifactId>junit</artifactId>
-     	<!--  <version>3.8.1</version> -->
-     	 <scope>test</scope>
-    	</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<!-- <version>3.8.1</version> -->
+			<scope>test</scope>
+		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-core</artifactId>
 			<version>1.18</version>
 		</dependency>
-		  <dependency>
-        <groupId>com.owlike</groupId>
-        <artifactId>genson</artifactId>
-        <version>0.99</version>
-    </dependency>
+		<dependency>
+			<groupId>com.owlike</groupId>
+			<artifactId>genson</artifactId>
+			<version>0.99</version>
+		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-servlet</artifactId>
@@ -121,11 +121,11 @@
 			<version>1.3.2</version>
 		</dependency>
 		<dependency>
-		    
-		<groupId>com.sun.jersey.contribs</groupId>
+
+			<groupId>com.sun.jersey.contribs</groupId>
 			<artifactId>jersey-multipart</artifactId>
 			<version>1.19</version>
-			</dependency>
+		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey.contribs</groupId>
 			<artifactId>jersey-spring</artifactId>
@@ -153,38 +153,70 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb</artifactId>
 			<!-- <version>1.8.0.RELEASE</version> -->
-		</dependency> 
-			<dependency>
+		</dependency>
+		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<!-- <version>1.6.11</version> -->
 		</dependency>
 		<dependency>
-        <groupId>commons-logging</groupId>
-        <artifactId>commons-logging</artifactId>
-        <!-- <version>1.1.1</version> -->
-       </dependency>
-		
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<!-- <version>1.1.1</version> -->
+		</dependency>
+
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<!-- <version>1.6.11</version> -->
 		</dependency>
-	<dependency>
-	<groupId>org.springframework</groupId>
-	<artifactId>spring-aop</artifactId>
-	<!-- <version>4.1.1.RELEASE</version> -->
-</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<!-- <version>4.1.1.RELEASE</version> -->
+		</dependency>
 
-	<dependency>
+		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<!-- <version>1.6.1</version> -->
 		</dependency>
 		<dependency>
-    	<groupId>cglib</groupId>
-	<artifactId>cglib</artifactId>
-	<version>2.2</version>
-    </dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib</artifactId>
+			<version>2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+		 	<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xmlbeans</groupId>
+			<artifactId>xmlbeans</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml-schemas</artifactId>
+			<version>3.9</version>
+		</dependency>
+		  <dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>1.7.1</version>
+		  </dependency>	
+
 	</dependencies>
 </project>
